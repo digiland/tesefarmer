@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%0^g#0&^)yv#r2%hss35n@y%lm6zdxea6q0z5$q!85+l7ilivl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tesefarmer.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #myapps
+    # myapps
     'market',
 
     'crispy_forms',
@@ -127,8 +127,6 @@ AUTH_USER_MODEL = 'market.User'
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
 
 
 LOGIN_REDIRECT_URL = "/"
