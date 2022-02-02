@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        {% for product in products %}
+          <div class="col-md-4">
+              <h4>{{product.product_name}}</h4>
+                <p>{{product.product_description}}</p>
+                <p>{{product.product_price}}</p>
+                 <p>{{product.location}}</p>
+
+        
+
+          </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
