@@ -6,16 +6,23 @@
 <div class="container-fluid">
     <div class="row">
         {% for product in products %}
-          <div class="col-md-4">
-              <h4>{{product.product_name}}</h4>
-                <p>{{product.product_description}}</p>
-                <p>{{product.product_price}}</p>
+
+        <div class="card" style="width: 18rem;">
+          {% with product.images.all|first as image %}
+                    {% if image %}
+                    <a href="{{ image.image.url }}"><img src="{{ image.image.url }}" alt="" title=""  class="card-img-top"/></a>
+                    {% endif %}
+                  {% endwith %}
+          <div class="card-body">
+            <h5 class="card-title">{{product.product_name}}</h5>
+            <p class="card-text">{{product.product_description}}</p>
+            <p>{{product.product_price}}</p>
                  <p>{{product.location}}</p>
-
-        
-
+            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
+        </div>             
         {% endfor %}
+
     </div>
 </div>
 
